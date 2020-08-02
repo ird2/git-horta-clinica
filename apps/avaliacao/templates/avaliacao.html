@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block main %}
+<section class="beautypress-inner-welocme-section beautypress-bg" style="background-image: url({{banner.banner_imagem.url}});">
+            <div class="beautypress-black-overlay"></div>
+            <div class="container">
+                <div class="beautypress-inner-welcome-content">
+                    <img src="img/inner-welcome-icon.png" alt="">
+                    <h1 class="color-white">{{banner.titulo_banner}}</h1>
+                    <p class="color-white">{{banner.descricao_banner}}</p>
+                </div><!-- .beautypress-inner-welcome-content END -->
+                <div class="beautypress-inner-welcome-footer-content">
+                    <ul class="beautypress-breadcrumb">
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="#">Avaliação</a></li>
+                    </ul>
+                </div><!-- .beautypress-inner-welcome-footer-content END -->
+            </div>
+        </section>
+<div class="mt-70"><h2 class="element-header-example text-center">Preencha Abaixo:</h2></div>
+
+<section class="beautypress-booking-section section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-6 col-xl-6">
+                        <div class="beautypress-booking-text-wraper">
+                            <div class="beautypress-booking-content-text beautypress-border beautypress-version-3">
+                                <div class="beautypress-booking-text">
+                                    <h2>Horários</h2>
+                                    <h3>Jornada de trabalho</h3>
+                                    <div class="beautypress-icon-bg-text">
+                                        <p>P.S.:Nossa equipe entrará em cotato com você para confirmação do horário da avaliação.</p>
+                                    </div><!-- .beautypress-icon-bg-text END -->
+                                    <ul>
+                                        <li>Seg - Sex : 7:00am - 21:00pm</li>
+                                        <li>Thu - Sab : 8am - 12:00pm</li>
+                                        <li>Domingo: Close</li>
+                                    </ul>
+                                </div><!-- .beautypress-booking-text END -->
+                            </div><!-- .beautypress-booking-content-text END -->
+                        </div><!-- .beautypress-booking-text-wraper END -->
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-6 col-xl-6">
+                        <div class="beautypress-booking-form-wraper">
+                            <form action="#" method="POST" id="beautypress-booking-form">
+                                <input type="hidden" name="action" value="send_appointment_form">
+                                <div class="alert hidden" id="beautypress-form-msg"></div>
+                                <div class="beautypress-service-and-date">
+                                    <h2>Serviço e Data</h2>
+                                    <div class="beautypress-select">
+                                        <div class="input-group">
+                                            <select name="appointment-service" id="appointment-service" class="form-control">
+                                                <option value="">Selecione o serviço</option>
+                                                <option value="Oil Massage">Oil Massage ($59.00)</option>
+                                                <option value="Relax Day">Relax Day ($199.00)</option>
+                                                <option value="Spa &amp; Beauty">Spa &amp; Beauty ($299.00)</option>
+                                                <option value="Relax Day (for Two)">Relax Day (for Two $399.00)</option>
+                                            </select>
+                                        </div>
+                                    </div><!-- .beautypress-select END -->
+                                    <div class="beautypress-spilit-container">
+                                        <div class="beautypress-date-select beautypress-select">
+                                            <div class="input-group">
+                                                <input type="text" id="appointment-date" class="form-control datepicker" name="appointment-date" placeholder="Date Shedule">
+                                            </div>
+                                        </div><!-- .beautypress-date-select END -->
+                                        <div class="beautypress-select">
+                                            <div class="input-group">
+                                                <select name="appointment-time" id="appointment-time" class="form-control">
+                                                    <option value="">Horário Desejado</option>
+                                                    <option value="07:00 AM">07:00 AM</option>
+                                                    <option value="07:30 AM">07:30 AM</option>
+                                                    <option value="08:00 AM">08:00 AM</option>
+                                                    <option value="08:30 AM">08:30 AM</option>
+                                                    <option value="09:00 AM">09:00 AM</option>
+                                                    <option value="09:30 AM">09:30 AM</option>
+                                                    <option value="10:00 AM">10:00 AM</option>
+                                                    <option value="10:30 AM">10:30 AM</option>
+                                                    <option value="11:00 AM">11:00 AM</option>
+                                                    <option value="11:30 AM">11:30 AM</option>
+                                                    <option value="12:00 PM">12:00 PM</option>
+                                                    <option value="12:30 PM">12:30 PM</option>
+                                                    <option value="01:00 PM">13:00 PM</option>
+                                                    <option value="01:30 PM">13:30 PM</option>
+                                                    <option value="02:00 PM">14:00 PM</option>
+                                                    <option value="02:30 PM">14:30 PM</option>
+                                                    <option value="03:00 PM">15:00 PM</option>
+                                                    <option value="03:30 PM">15:30 PM</option>
+                                                    <option value="04:00 PM">16:00 PM</option>
+                                                    <option value="04:30 PM">16:30 PM</option>
+                                                    <option value="05:00 PM">17:00 PM</option>
+                                                    <option value="05:30 PM">17:30 PM</option>
+                                                    <option value="06:00 PM">18:00 PM</option>
+                                                    <option value="06:30 PM">18:30 PM</option>
+                                                    <option value="07:00 PM">19:00 PM</option>
+                                                    <option value="07:30 PM">19:30 PM</option>
+                                                    <option value="08:00 PM">20:00 PM</option>
+                                                    <option value="08:30 PM">20:30 PM</option>
+
+
+
+                                                </select>
+                                            </div>
+                                        </div><!-- .beautypress-select END -->
+                                    </div>
+                                </div><!-- .beautypress-service-and-date END -->
+                                <div class="beautypress-personal-information">
+                                    <h2>Personal Information</h2>
+                                    <div class="beautypress-spilit-container">
+                                        <div class="form-group first-name-group">
+                                            <input type="text" name="first-name" class="form-control" id="first-name" placeholder="First Name....">
+                                        </div>
+                                        <div class="form-group email-group">
+                                            <input type="email" name="email" class="form-control" id="email" placeholder="Email Address....">
+                                        </div>
+                                    </div>
+                                    <div class="form-group phone-group">
+                                        <input type="number" name="phone" class="form-control" id="phone" placeholder="Phone Number....">
+                                    </div>
+                                    <div class="form-group massage-gropu">
+                                        <textarea class="form-control" rows="5" id="appointment-comment" placeholder="Enter Message...."></textarea>
+                                    </div>
+                                    <div class="form-group button-group">
+                                        <input type="submit" name="submit" value="submit" id="beautypress-submit">
+                                    </div>
+                                </div><!-- .beautypress-personal-information END -->
+                            </form><!-- #beautypress-booking-form END -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+{% endblock %}
+

@@ -1,0 +1,197 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block main %}
+
+	<!-- welcome section -->
+			<section class="beautypress-welcome-section beautypress-welcome-section-v1 welcome-height-calc-minus">
+				<div class="beautypress-welcome-slider-wraper">
+					<div class="beautypress-welcome-slider owl-carousel">
+
+						{% for banner in banners %}
+						<div class="beautypress-welcome-slider-item content-left beautypress-bg" style="background-image: url({{banner.imagem.url}});">
+							<div class="container">
+								<div class="beautypress-welcome-content-group">
+									<div class="beautypress-welcome-container">
+										<div class="beautypress-welcome-wraper">
+											<h2 class="color-">{{banner.titulo1}}</h2>
+											<h3 class="color-purple">{{banner.titulo2}}</h3>
+											<p class="color-black">{{banner.descricao}}</p>
+											<div class="beautypress-btn-wraper">
+												<a href="#" class="xs-btn bg-color-pink round-btn box-shadow-btn">Fale Conosco<span></span></a>
+											</div>
+										</div>
+									</div><!-- .beautypress-welcome-container END -->
+								</div><!-- .beautypress-welcome-content-group END -->
+							</div>
+						</div><!-- .beautypress-welcome-slider-item END -->
+                        {% endfor %}
+					</div><!-- .beautypress-welcome-slider END -->
+				</div>
+			</section><!-- .beautypress-welcome-section END -->
+
+
+<!-- About section -->
+			<section class="beautypress-about-section section-padding">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-lg-6 col-xl-6">
+							<div class="beautypress-new-about-text-gruop">
+								<div class="beautypress-sub-heading beautypress-watermark-title">
+									<h2 data-title="{{sobre.titulo1 }}">{{sobre.titulo1 }}<br>{{sobre.titulo2}}</h2>
+								</div><!-- .beautypress-sub-heading END -->
+								<span class="beautypress-gradient-separetor"></span>
+								<p>{{sobre.descricao}}</p>
+								<div class="beautypress-btn-wraper">
+									<a href="#" class="xs-btn round-btn box-shadow-btn bg-color-purple">
+										Fale conosco
+										<span></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+							<div class="beautypress-new-about-img-wraper">
+								<div class="beautypress-new-about-img-group">
+									<div class="beautypress-new-single-about-img-group">
+										<div class="beautypress-new-single-about-img ">
+											<div class="beautypress-3d-project-card">
+												<img src="{{sobre.imagem1.url}}" alt="{{sobre.seo_imagem1}}">
+											</div>
+										</div><!-- .beautypress-new-single-about-img .beautypress-3d END -->
+									</div><!-- .beautypress-new-single-about-img-group END -->
+
+									<div class="beautypress-new-single-about-img-group">
+										<div class="beautypress-new-single-about-img beautypress-3d">
+											<div class="beautypress-3d-project-card">
+												<img src="{{sobre.imagem2.url}}" alt="{{sobre.seo_imagem2}}">
+											</div><!-- .beautypress-3d-project-card END -->
+										</div><!-- .beautypress-new-single-about-img .beautypress-3d END -->
+									</div><!-- .beautypress-new-single-about-img-group END -->
+								</div><!-- .beautypress-new-about-img-group END -->
+
+								<div class="beautypress-new-about-img-group">
+									<div class="beautypress-new-single-about-img-group">
+										<div class="beautypress-new-single-about-img beautypress-3d">
+											<div class="beautypress-3d-project-card">
+												<img src="{{sobre.imagem3.url}}" alt="{{sobre.seo_imagem3}}">
+											</div><!-- .beautypress-3d-project-card END -->
+										</div><!-- .beautypress-new-single-about-img .beautypress-3d END -->
+									</div><!-- .beautypress-new-single-about-img-group END -->
+
+									<div class="beautypress-new-single-about-img-group">
+										<div class="beautypress-new-single-about-img beautypress-3d">
+											<div class="beautypress-3d-project-card">
+												<img src="{{sobre.imagem4.url}}" alt="{{sobre.seo_imagem4}}">
+											</div><!-- .beautypress-3d-project-card END -->
+										</div><!-- .beautypress-new-single-about-img .beautypress-3d END -->
+									</div><!-- .beautypress-new-single-about-img-group END -->
+								</div><!-- .beautypress-new-about-img-group END -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</section><!-- .beautypress-about-section END -->
+			<!-- About section -->
+
+<section class="beautypress-simple-text-with-img-section bg-color-gray">
+				<div class="container">
+					<div class="row">
+
+
+						<div class="col-md-12 col-sm-12 col-xl-6 col-lg-6">
+							<div class='twentytwenty-container beautypress-before-after'>
+								<img src="{{tratamento.imagem_antes.url}}" alt="{{tratamento.seo_imagem1}}">
+								<img src="{{tratamento.imagem_depois.url}}" alt="{{tratamento.seo_imagem2}}">
+							</div>
+						</div>
+
+
+						<div class="col-md-12 col-sm-12 col-lg-6 col-xl-6">
+							<div class="beautypress-simple-text beautypress-version-2">
+								<div class="beautypress-big-sub-heading">
+									<h2>{{tratamento.titulo1}}</h2>
+									<h3>{{tratamento.titulo2}}</h3>
+								</div><!-- .beautypress-separetor-sub-heading END -->
+								<div class="beautypress-simple-text-content">
+									<p>{{tratamento.descricao}}</p>
+								</div>
+
+
+								<div class="beautypress-spilit-container">
+									<div class="beautypress-icon-with-text">
+										<div class="beautypress-svg-ico">
+											<img src="{{tratamento.ico1.url}}" alt="{{tratamento.seo_ico1}}">
+										</div>
+										<h3>{{tratamento.titulo_ico1}}</h3>
+										<p>{{tratamento.descricao_ico1}}</p>
+									</div><!-- .beautypress-icon-with-text END -->
+									<div class="beautypress-icon-with-text">
+										<div class="beautypress-svg-ico">
+											<img src="{{tratamento.ico2.url}}" alt="{{tratamento.seo_ico2}}">
+										</div>
+										<h3>{{tratamento.titulo_ico2}}</h3>
+										<p>{{tratamento.descricao_ico2}}</p>
+									</div><!-- .beautypress-icon-with-text END -->
+								</div>
+							</div><!-- .beautypress-simple-text END -->
+						</div>
+					</div>
+				</div>
+			</section><!-- .beautypress-simple-text-with-img-section END -->
+			<!-- Simple text with image end -->
+<section class="beautypress-call-to-action-v2 beautypress-version-2">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 col-lg-6 col-xl-6">
+						<div class="beautypress-call-to-action-content-v2">
+							<h2>AGENDE<span>uma avaliação estética gratuita!</span></h2>
+						</div>
+					</div>
+					<div class="col-md-12 col-lg-6 col-xl-6">
+						<div class="beautypress-btn-wraper">
+							<a href="{%url 'avaliacao'%}" class="xs-btn round-btn box-shadow-btn bg-color-cyan">Agendar <span></span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+<!-- recent project -->
+		<section class="beautypress-recent-project beautypress-padding-bottom">
+			<div class="container">
+				<div class="beautypress-section-headinig">
+						<h2>Assista</h2>
+						<h3>Nossos vídeos</h3>
+				</div>
+
+
+					<div class="row">
+						{% for video in videos %}
+						<div class="col-md-4 col-sm-12 col-xl-4">
+							<div class="beautypress-single-recent-project ">
+								<object width="370" height="230">
+									   <param name="movie" value="{{video.url_video}}"/>
+									   <embed src="{{video.capa}}" type="application-flash" width="390" height="230"/>
+								   </object>
+								<div class="beautypress-recent-project-hover">
+
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+
+					</div>
+
+			</div>
+		</section>
+		<!-- recent project -->
+
+
+
+
+
+
+{% endblock %}
+

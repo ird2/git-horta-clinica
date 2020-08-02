@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block main %}
+<section class="beautypress-inner-welocme-section beautypress-bg" style="background-image: url({{banner.banner_imagem.url}});">
+            <div class="beautypress-black-overlay"></div>
+            <div class="container">
+                <div class="beautypress-inner-welcome-content">
+                    <img src="img/inner-welcome-icon.png" alt="">
+                    <h1 class="color-white">{{banner.titulo_banner}}</h1>
+                    <p class="color-white">{{banner.descricao_banner}}</p>
+                </div><!-- .beautypress-inner-welcome-content END -->
+                <div class="beautypress-inner-welcome-footer-content">
+                    <ul class="beautypress-breadcrumb">
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="#">Serviços</a></li>
+                    </ul>
+                </div><!--beautypress-inner-welcome-footer-content END -->
+            </div>
+        </section>
+<div class="mt-70"><h2 class="element-header-example text-center">Serviços abaixo:</h2></div>
+
+<section class="beautypress-blog-post-section section-padding">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 col-xl-8 col-lg-8">
+						<div class="beautypress-blog-post-group">
+							<div class="beautypress-blog-post-wraper">
+								<img src="{{tratamentos.imagem.url}}" alt="">
+
+								<h2>{{tratamentos.titulo}}</h2>
+								<p><span class="firstcharacter"></span>{{tratamentos.descricao}}</p>
+
+								<blockquote>
+
+								</blockquote>
+
+								<p>His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought. It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer.</p>
+							</div><!-- .beautypress-blog-post-wraper END -->
+
+
+							<div class="beautypress-replay-container">
+								<div class="beautypress-simple-title mb-30">
+									<h3>Fale Conocsco</h3>
+								</div><!-- .beautypress-simple-title END -->
+								<div class="beautypress-replay-form-wraper">
+									<form action="#" method="POST" id="beautypress-replay-form">
+										<div class="row mb-30">
+											<div class="col-md-4 col-sm-12">
+												<div class="form-group">
+													<input type="text" id="r_name" class="form-control" placeholder="Your name">
+												</div>
+											</div>
+											<div class="col-md-4 col-sm-12">
+												<div class="form-group">
+													<input type="email" id="r_email" class="form-control" placeholder="Your email">
+												</div>
+											</div>
+											<div class="col-md-4 col-sm-12">
+												<div class="form-group">
+													<input type="text" id="r_website" class="form-control" placeholder="Website">
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<textarea class="form-control mb-30" name="r_massage" id="r_massage" cols="30" placeholder="Comments" rows="10"></textarea>
+										</div>
+										<div class="form-group">
+											<input type="submit" value="Submit comment" id="r_submit">
+										</div>
+									</form>
+								</div><!-- .beautypress-replay-form-wraper END -->
+							</div><!-- .beautypress-replay-container END -->
+						</div><!-- .beautypress-blog-post-group END -->
+					</div>
+					<div class="col-md-12 col-xl-4 col-lg-4">
+						<div class="beautypress-side-bar-group">
+
+							<div class="beautypress-single-sidebar">
+								<div class="beautypress-sidebar-heading">
+									<h3>Siga-nos</h3>
+								</div>
+								<div class="beautypress-footer-social text-left">
+									<ul class="beautypress-social-list">
+										<li><a href="https://www.facebook.com/clinicahortaduarte/" class="beautypress-facebook"><i class="fa fa-facebook"></i></a></li>
+										<li><a href="https://www.instagram.com/hortaduarte/?hl=pt-br" class="beautypress-instagram"><i class="fa fa-instagram"></i></a></li>
+
+									</ul><!-- .beautypress-social-list END -->
+								</div>
+							</div><!-- .beautypress-single-sidebar END -->
+							<div class="beautypress-single-sidebar">
+								<div class="beautypress-sidebar-heading">
+									<h3>Serviços</h3>
+								</div>
+								<ul class="beautypress-category-list">
+									{% for todos in todos_tratamentos %}
+									<li><a href="{% url 'tratamentos_detalhe' todos.id %}"><i class="fa fa-play"></i>{{todos}}</a></li>
+									{% endfor %}
+								</ul><!-- .beautypress-category-list END -->
+							</div><!-- .beautypress-single-sidebar END -->
+
+						</div><!-- .beautypress-side-bar-group END -->
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+{% endblock %}
+

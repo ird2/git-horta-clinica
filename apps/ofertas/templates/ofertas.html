@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block main %}
+<section class="beautypress-inner-welocme-section beautypress-bg" style="background-image: url({{banner.banner_imagem.url}});">
+            <div class="beautypress-black-overlay"></div>
+            <div class="container">
+                <div class="beautypress-inner-welcome-content">
+                    <img src="img/inner-welcome-icon.png" alt="">
+                    <h1 class="color-white">{{banner.titulo_banner}}</h1>
+                    <p class="color-white">{{banner.descricao_banner}}</p>
+                </div><!-- .beautypress-inner-welcome-content END -->
+                <div class="beautypress-inner-welcome-footer-content">
+                    <ul class="beautypress-breadcrumb">
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="#">Ofertas</a></li>
+                    </ul>
+                </div><!-- .beautypress-inner-welcome-footer-content END -->
+            </div>
+        </section>
+<div class="mt-70"><h2 class="element-header-example text-center">Ofertas abaixo:</h2></div>
+
+<div class="container">
+<div class="row">
+<section class="beautypress-pricing-table-section section-padding">
+			<div class="container">
+				<div class="row">
+
+				{% for oferta in ofertas %}
+						<div class="col-md-12 col-sm-12 col-lg-4 col-xl-4">
+							<div class="beautypress-single-pricing-table">
+								<div class="beautypress-pricing-header beautypress-purple-overlay">
+									<img src="{{oferta.imagem.url}}" alt="">
+									<div class="beautypress-pricing-header-content">
+										<div class="beautypress-pricing-title">
+											<h5>Válido até {{oferta.data_fim}}</h5>
+										</div>
+
+										<div class="beautypress-pricing-price">
+											<h4>Pacote por</h4>
+											<h4><span>R${{oferta.desconto}}</span></h4>
+										</div>
+									</div>
+								</div><!-- .beautypress-pricing-header END -->
+								<div class="beautypress-pricing-footer">
+									<ul class="beautypress-both-side-list">
+                                         {% for lista in oferta.lista_ofertas_set.all  %}
+										<li><span>{{lista.descricao}}</span> <b>R$ {{lista.preco}}</b></li>
+										 {% endfor %}
+									</ul>
+
+									<div class="beautypress-btn-wraper">
+										<a href="#" class="xs-btn round-btn box-shadow-btn bg-color-purple">Solicite<span style="top: 52.8125px; left: 63.9688px;"></span></a>
+									</div>
+								</div><!-- .beautypress-pricing-footer END -->
+							</div><!-- .beautypress-single-pricing-table END -->
+						</div>
+
+
+
+				 {% endfor %}
+					</div>
+			</div>
+</section>
+
+</div>
+
+<div class="beautypress-pagination-wraper">
+					<ul class="beautypress-pagination">
+						<li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+						<li><a href="#">1</a></li>
+
+						<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+					</ul>
+</div>
+
+</div>
+
+
+{% endblock %}
+

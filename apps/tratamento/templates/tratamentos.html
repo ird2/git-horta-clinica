@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block main %}
+<section class="beautypress-inner-welocme-section beautypress-bg" style="background-image: url({{banner.banner_imagem.url}});">
+            <div class="beautypress-black-overlay"></div>
+            <div class="container">
+                <div class="beautypress-inner-welcome-content">
+                    <img src="img/inner-welcome-icon.png" alt="">
+                    <h1 class="color-white">{{banner.titulo_banner}}</h1>
+                    <p class="color-white">{{banner.descricao_banner}}</p>
+                </div><!-- .beautypress-inner-welcome-content END -->
+                <div class="beautypress-inner-welcome-footer-content">
+                    <ul class="beautypress-breadcrumb">
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="#">Serviços</a></li>
+                    </ul>
+                </div><!--beautypress-inner-welcome-footer-content END -->
+            </div>
+        </section>
+<div class="mt-70"><h2 class="element-header-example text-center">Serviços abaixo:</h2></div>
+
+<div class="beautypress-our-service-section section-padding">
+			<div class="container">
+				<div class="row">
+                    {% for tratamento in tratamentos%}
+					<div class="col-md-12 col-sm-12 col-lg-4 col-xl-4">
+						<div class="beautypress-single-our-sevice beautypress-version-2 bg-color-white">
+							<div class="beautypress-service-header">
+								<img src="{{tratamento.imagem.url}}" alt="{{tratamento.imagem.seo_tratamento}}">
+							</div><!-- .beautypress-service-header END -->
+							<div class="beautypress-service-footer">
+								<a href="{% url 'tratamentos_detalhe' tratamento.id %}" class="beautypress-service-title underline-title">{{tratamento.titulo}}</a>
+								<p>{{tratamento.descricao}}</p>
+
+								<a href="{% url 'tratamentos_detalhe' tratamento.id %}" class="xs-btn bg-color-verde  round-btn box-shadow-btn">
+									Saiba mais
+									<span style="top: -2.09375px; left: 102.5px;"></span>
+								</a>
+							</div><!-- .beautypress-service-footer END -->
+						</div><!-- .beautypress-single-our-sevice END -->
+					</div>
+                    {% endfor %}
+
+
+
+					</div>
+				<br><br>
+<div class="pagination">
+	<div class="centralizar-paginator">
+		{% if tratamentos.has_previous %}
+			<a class="pagination-action" href="?page=1">
+				<i class="fa fa-angle-double-left" aria-hidden="true"></i>
+			</a>
+			<a class="pagination-action" href="?page={{ tratamentos.previous_page_number }}">
+				<i class="fa fa-angle-left" aria-hidden="true"></i>
+			</a>
+		{% endif %}
+		<span class="pagination-current">{{ tratamentos.number }}</span>
+		<span class="pagination-of">de</span>
+		<span class="pagination-total">{{ tratamentos.paginator.num_pages }}</span>
+		{% if tratamentos.has_next %}
+			<a class="pagination-action" href="?page={{tratamentos.next_page_number }}">
+				<i class="fa fa-angle-right" aria-hidden="true"></i> </a>
+			<a class="pagination-action" href="?page={{ tratamentos.paginator.num_pages }}">
+				<i class="fa fa-angle-double-right" aria-hidden="true"></i>
+			</a>
+		{% endif %}
+	</div>
+</div>
+
+
+				</div>
+
+
+</div>
+
+
+{% endblock %}
+

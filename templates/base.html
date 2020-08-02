@@ -1,0 +1,221 @@
+<!doctype html>
+{% load static %}
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="pt"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zxx"> <!--<![endif]-->
+	
+<!-- Mirrored from demo.xpeedstudio.com/html/beautypress/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 15 Jul 2020 22:46:19 GMT -->
+<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<title>{% block title %}{{ empresa.nome_empresa }}{% endblock %}</title>
+
+		<meta name="description" content="{{ empresa.descricao_empresa }}">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="apple-touch-icon" href="apple-touch-icon.png">
+		
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700%7CNiconne" rel="stylesheet">
+		<link rel="icon" type="image/png" href="{% static 'img/favicon.png'%}">
+
+		<!-- Bootstrap.css -->
+		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+		<!-- Date pixker -->
+		<link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.min.css'%}">
+		<!-- Font awesome -->
+		<link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}">
+		<!-- XS Icon -->
+		<link rel="stylesheet" href="{% static 'css/xs-icon.css'%}">
+		<!-- Owl slider -->
+		<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}">
+		<!-- theme switcher -->
+		<link rel="stylesheet" href="{% static 'css/themeSwither.css'%}">
+		<!-- Isotope -->
+		<link rel="stylesheet" href="{% static 'css/isotope.css'%}">
+		<!-- magnific-popup -->
+		<link rel="stylesheet" href="{% static 'css/magnific-popup.css'%}">
+		<!--For Plugins external css-->
+		<link rel="stylesheet" href="{% static 'css/plugins.css'%}">
+
+		<!--Theme custom css -->
+		<link rel="stylesheet" href="{% static 'css/style.css'%}">
+	    <!--Theme custom css paginator -->
+		<link rel="stylesheet" href="{% static 'blog/css/pagination_green.css'%}">
+
+		<!--Theme Responsive css-->
+		<link rel="stylesheet" href="{% static 'css/responsive.css'%}">
+	</head>
+	<body>
+		<!--[if lt IE 8]>
+				<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+
+		<!-- Prelaoder -->
+		<div id="preloader">
+			<div class="preloader-window left-window"></div>
+			<div class="preloader-window right-window"></div>
+			<div class="preloader-content">
+				<img src="{{empresa.logo.url}}" alt="{{empresa.seo_logo}}">
+				<h2>{{preload.titulo_preloader}}</h2>
+			</div>
+			<div class="spinner-block">
+				<div class="spinner-eff spinner-eff-3">
+					<div class="circle circle-1"></div>
+					<div class="circle circle-2"></div>
+					<div class="circle circle-3"></div>
+				</div>
+			</div>
+			<div class="preloader-cancel-btn-wraper">
+                <a href="#" id="preloader-cancel-btn" class="xs-btn round-btn bg-color-pink box-shadow-btn">cancelar preloader <span></span></a>
+            </div>
+		</div>
+		<!-- Prelaoder end -->
+		
+		<!-- xs main wraper -->
+		<main class="xs-main-content">
+			<!-- Main menu -->
+			<header class="beautypress-header-section beautypress-version-1 beautypress-extra-css menu-skew bg-color-purple header-height-calc-minus navbar-fixed">
+				<div class="container">
+					<div class="beautypress-logo-wraper">
+						<a href="{%url 'home' %}" class="beautypress-logo beautypress-version-2  beautypress-version-4">
+							<img src="{% static 'img/barbara/logo_boa_sfundo.png'%}" alt="">
+						</a>
+					</div><!-- .beautypress-logo-wraper END -->
+				</div>
+				<div class="beautypress-header-top">
+					<div class="container">
+						<ul class="beautypress-simple-iocn-list beautypress-version-1">
+							<li><i class="xsicon icon-call"></i>{{empresa.telefone}}</li>
+							<li><i class="xsicon icon-envelope"></i>{{empresa.email}}</li>
+						</ul>
+					</div>
+				</div>
+				<div class="beautypress-main-header color-white">
+					<div class="container">
+						<nav class="xs_nav beautypress-nav beautypress-mega-menu">
+							<div class="nav-header">
+								<div class="nav-toggle"></div>
+							</div>
+							<div class="nav-menus-wrapper">
+								 <ul class="nav-menu">
+									<li><a href="{% url 'home'%}">Home</a></li>
+
+									
+									<li><a href="#">Promoções</a><ul class="nav-dropdown">
+											<li><a href="{% url 'avaliacao' %}">Avaliações Gratuítas</a></li>
+											<li><a href="{% url 'ofertas' %}">Ofertas</a></li>
+											
+										</ul>
+									</li>
+									<li><a href="{% url 'tratamentos' %}">Tratamentos</a>
+									</li>
+									
+									<li><a href="element_team.html">Profissionais</a>
+									<li><a href="blog-v2.html">Tour Virtual 360º</a>
+										
+									</li>
+									<li><a href="blog-v2.html">blog</a>
+										
+									</li>
+									<li><a href="about-v5.html">Quem somos</a>
+										
+									</li>
+									<li><a href="{{empresa.telefone}}">Contato</a>
+
+									</li>
+									
+								</ul>
+
+							</div>
+						</nav>	
+					</div>
+				</div><!-- .beautypress-main-header END -->
+			</header><!-- .beautypress-header-section END -->
+			<!-- Main menu closed -->
+
+			{% block main %}
+
+
+			{% endblock %}
+
+
+
+			<!-- Footer section -->
+			<footer class="beautypress-footer-section">
+				<div class="container">
+					<div class="beautypress-footer-content">
+						<div class="beautypress-footer-logo">
+							<a href="index-2.html">
+								<img src="{{empresa.logo.url}}" alt="{{empresa.seo_logo}}">
+							</a>
+						</div><!-- .beautypress-footer-logo END -->
+						<div class="beautypress-subscribe-wraper">
+							<h3>Inscreva-se para receber nossas promoções</h3>
+							<form action="#" method="POST" class="mc-form">
+								<div class="beautypress-subscribe">
+									<input type="email" placeholder="Enter your email address....." id="mc-email">
+									<input type="submit" value="subscribe" class="beautypress-sub">
+									<label for="mc-email"></label>
+								</div><!-- .beautypress-subscribe END -->
+							</form>
+						</div><!-- .beautypress-subscribe-wraper END -->
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-lg-4 col-xl-4">
+								<div class="beautypress-single-footer">
+									<p>{{rodape.descricao_rodape}}</p>
+								</div><!-- .beautypress-single-footer END -->
+							</div>
+							<div class="col-md-12 col-sm-12 col-lg-4 col-xl-4">
+								<div class="beautypress-single-footer beautypress-single-footer-group">
+									<p>{{rodape.horario}}</p>
+									<p>{{rodape.horario2}}</p>
+									<p>{{rodape.horario3}}</p>
+								</div><!-- .beautypress-single-footer END -->
+							</div>
+							<div class="col-md-12 col-sm-12 col-lg-4 col-xl-4">
+								<div class="beautypress-single-footer beautypress-single-footer-group">
+									<p>{{empresa.endereco}}</p>
+									<p>Email:{{empresa.email}}</p>
+									<p>Telefone:{{empresa.telefone}}</p>
+								</div><!-- .beautypress-single-footer END -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="beautypress-copyright-content">
+					<div class="container">
+						<div class="beautypress-back-to-top-group">
+							<div class="beautypress-back-to-top-wraper show-last-pos active back-to-top-center">
+								<a href="#" class="beautypress-btn-2 beautypress-iocn-btn full-round-btn back-to-top"><i class="fa fa-angle-up"></i></a>
+							</div><!-- .beautypress-back-to-top-wraper END -->
+						</div>
+						<div class="beautypress-copyright-text">
+							<p><a href="https://xpeedstudio.com/">www.ird2.com.br</a> &copy; 2020 All Rights Reserved. -> {% now "d F Y H:i" %}</p>
+						</div>
+					</div>
+				</div>
+			</footer><!-- .beautypress-footer-section END -->
+			<!-- Footer section end -->
+		</main>
+		<!-- xs main wraper end -->
+
+		<script src="{% static 'js/jquery-3.2.1.min.js'%}"></script>
+		<script src="{% static 'js/plugins.js'%}"></script>
+		<script src="{% static 'js/bootstrap.min.js'%}"></script>
+		<script src="{% static 'js/bootstrap-datepicker.min.js'%}"></script>
+		<script src="{% static 'js/isotope.pkgd.min.js'%}"></script>
+		<script src="{% static 'js/jquery.ajaxchimp.min.js'%}"></script>
+		<script src="{% static 'js/owl.carousel.min.js'%}"></script>
+		<script src="{% static 'js/jquery.magnific-popup.min.js'%}"></script>
+		<script src="{% static 'js/appear.js'%}"></script>
+		<script src="{% static 'js/spectragram.min.js'%}"></script>
+		<script src="{% static 'js/themeSwither.js'%}"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3&amp;key=AIzaSyCy7becgYuLwns3uumNm6WdBYkBpLfy44k"></script>
+		<script src="{% static 'js/main.js'%}"></script>
+	</body>
+
+<!-- Mirrored from demo.xpeedstudio.com/html/beautypress/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 15 Jul 2020 22:48:43 GMT -->
+</html>
