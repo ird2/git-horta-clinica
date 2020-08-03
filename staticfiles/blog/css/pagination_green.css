@@ -1,0 +1,44 @@
+/* GREEN THEME */
+
+.pagination {
+    margin-top: 1em;
+
+}
+.centralizar-paginator{
+ margin:0 auto;
+
+}
+.pagination a {
+    text-decoration: none;
+
+
+}
+
+.pagination-current, 
+.pagination-total {
+    padding: 0.9em 0.8em;
+    border-radius: 20px;
+    color: #fff;
+    background-color:#ffaba2;
+}
+
+.pagination-total {
+    background-color: #B9B9B9;
+}
+
+.pagination-action {
+    margin: 0 0.1em;
+    display: inline-block;
+    padding: 0.5em 0.5em;
+    color: #B9B9B9;
+    font-size: 1.3em;
+}
+
+.pagination-of {
+    color: #B9B9B9;
+    padding:1em 1em;
+}
+
+.pagination-action:hover {
+    color: #3354AA;
+}
